@@ -131,7 +131,4 @@ model.fit_generator(
         LearningRateScheduler(lambda epoch: float(lr / 3 ** (epoch * 4 // epochs)))  
     ])
 
-from google.colab import drive
-drive.mount('/content/drive')
-
 model.save('/content/drive/My Drive/model2.h5')
