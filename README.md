@@ -41,3 +41,51 @@ Resnetとは、畳み込み層へ入力させるものと何もしないもの�
 
 今回はCNNを使って上記の音声データを認識するため、まず1001カラムの配列データを1列の正解ラベルと(20×50×1)の入力データに変形します。<br>
 ※今回は音声データでRGBなどは関係ないためチャンネル数は1にします。<br>
+<br>
+
+### Residual Blockの作成
+
+    ```
+    class ResidualBlock(Layer):
+      def __init__(self, filters, strides, identity=True):
+        super(ResidualBlock, self).__init__()
+        self.identity = identity
+
+        # 必要なレイヤーを事前定義
+        self.conv1 = Conv2D(filters // 4, (1, 1), strides=strides, padding='same', kernel_initializer='he_normal')
+        self.bn1 = BatchNormalization()
+
+        self.conv2 = Conv2D(filters // 4, (3, 3), padding='same', kernel_initializer='he_normal')
+        self.bn2 = BatchNormalization()
+
+        self.conv3 = Conv2D(filters, (1, 1), padding='same', kernel_initializer='he_normal')
+        self.bn3 = BatchNormalization()
+
+        # 出力のチャネル数やシェイプが途中で変化する場合の調整用の畳み込み層
+        if not self.identity:
+          self.skip_conv = Conv2D(filters, (1, 1), strides=strides, padding='same', kernel_initializer='he_normal')
+
+      def call(self, inputs):
+
+        # residual path
+        x = self.conv1(inputs)
+        x = self.bn1(x)
+        x = Activation('relu')(x)
+
+        x = self.conv2(x)
+        x = self.bn2(x)
+        x = Activation('relu')(x)
+
+        x = self.conv3(x)
+        _residual = self.bn3(x)
+
+        # shortcut path
+        if self.identity:
+          _shortcut = inputs
+        else:
+          _shortcut =self.skip_conv(inputs)
+
+        outputs = _residual + _shortcut
+        return outputs
+    ```
+
