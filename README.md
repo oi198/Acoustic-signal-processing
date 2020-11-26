@@ -94,5 +94,5 @@ class ResidualBlock(Layer):
 <図3 : Residual Block実装コード><br>
 
 このResidualBlockは、入力inputsに対して畳み込み層conv1,conv2,conv3によって畳み込みされた_residualと、畳み込みされていない_shortcutを合成したoutputsを返すクラスです。<br>
-またidentityがTrueの時はinputsがそのまま_shortcutとなるが、Falseの時は_residualと合成可能にする形にするためにinputsは一度畳み込み層skip_convによって畳み込みされる。
+またidentityがTrueの時はinputsがそのまま_shortcutとなるが、Falseの時は_residualと合成可能にする形にするために、inputsは一度畳み込み層skip_convによって畳み込みされて_shortcutとなる。<br>
 
