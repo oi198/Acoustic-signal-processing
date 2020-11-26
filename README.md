@@ -132,4 +132,5 @@ model.summary()
 ```
 <図4 : CNNモデルの実装><br>
 
-
+最適化アルゴリズムにはAdam、
+モデル評価のための損失関数は多クラス交差エントロピー(categorical cross entropy)を設定しました。
