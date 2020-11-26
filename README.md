@@ -96,3 +96,37 @@ class ResidualBlock(Layer):
 このResidualBlockは、入力inputsに対して畳み込み層conv1,conv2,conv3によって畳み込みされた_residualと、畳み込みされていない_shortcutを合成したoutputsを返すクラスです。<br>
 またidentityがTrueの時はinputsがそのまま_shortcutとなるが、Falseの時は_residualと合成可能にする形にするために、inputsは一度畳み込み層skip_convによって畳み込みされて_shortcutとなる。<br>
 
+```
+block_nums = 6
+
+model = Sequential()
+model.add(Conv2D(16, (3, 3), padding='same', kernel_initializer='he_normal', input_shape=(20,50,1)))
+
+# depthが64のResidualBlockの塊。block_nums個のResidualBlockで構成される
+model.add(ResidualBlock(64, strides=(1, 1), identity=False))
+for _ in range(block_nums - 1):
+  model.add(ResidualBlock(64, strides=(1, 1), identity=True))
+
+# 同様にdepthが128のResidualBlockの塊
+model.add(ResidualBlock(128, strides=(2, 2), identity=False))
+for _ in range(block_nums - 1):
+  model.add(ResidualBlock(128, strides=(1, 1), identity=True))
+
+# 同様にdepthが256のResidualBlockの塊
+model.add(ResidualBlock(256, strides=(2, 2), identity=False))
+for _ in range(block_nums - 1):
+  model.add(ResidualBlock(256, strides=(1, 1), identity=True))
+
+model.add(BatchNormalization())
+model.add(Activation('relu'))
+model.add(GlobalAveragePooling2D())
+model.add(Dense(8, activation='softmax'))
+
+model.compile(
+    optimizer='adam',
+    loss='categorical_crossentropy',
+    metrics=['accuracy'])
+
+model.summary()
+```
+<図4 : CNNモデルの実装>
