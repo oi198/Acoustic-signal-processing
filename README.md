@@ -94,7 +94,7 @@ class ResidualBlock(Layer):
 <図3 : Residual Block実装コード><br>
 
 このResidualBlockは、入力inputsに対して畳み込み層conv1,conv2,conv3によって畳み込みされた_residualと、畳み込みされていない_shortcutを合成したoutputsを返すクラスです。<br>
-またidentityがTrueの時はinputsがそのまま_shortcutとなるが、Falseの時は_residualと合成可能にする形にするために、inputsは一度畳み込み層skip_convによって畳み込みされて_shortcutとなる。<br>
+またidentityがTrueの時はinputsがそのまま_shortcutとなるが、Falseの時は_residualと合成可能にする形にするために、inputsは一度畳み込み層skip_convによって畳み込みされて_shortcutとなります。<br>
 <br>
 
 ```
@@ -132,5 +132,10 @@ model.summary()
 ```
 <図4 : CNNモデルの実装><br>
 
+ResidualBlockを並べ、出力されたものをGlobalAveragePooling用いて1次元配列とし、活性化関数softmaxの出力層から出力します。
 最適化アルゴリズムにはAdam、
-モデル評価のための損失関数は多クラス交差エントロピー(categorical cross entropy)を設定しました。
+モデル評価のための損失関数は多クラス交差エントロピー(categorical cross entropy)を設定しました。<br>
+複雑に見えますが、パラメータの数は約60万個と深層学習モデルにしては計算量は抑えられています。<br>
+<br>
+
+
