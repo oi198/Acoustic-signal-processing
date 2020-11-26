@@ -95,6 +95,7 @@ class ResidualBlock(Layer):
 
 このResidualBlockは、入力inputsに対して畳み込み層conv1,conv2,conv3によって畳み込みされた_residualと、畳み込みされていない_shortcutを合成したoutputsを返すクラスです。<br>
 またidentityがTrueの時はinputsがそのまま_shortcutとなるが、Falseの時は_residualと合成可能にする形にするために、inputsは一度畳み込み層skip_convによって畳み込みされて_shortcutとなる。<br>
+<br>
 
 ```
 block_nums = 6
@@ -129,4 +130,6 @@ model.compile(
 
 model.summary()
 ```
-<図4 : CNNモデルの実装>
+<図4 : CNNモデルの実装><br>
+
+
