@@ -12,10 +12,10 @@
 
 以下のような8種類の音声データを認識し、分類するモデルを作成する。<br>
 
-(例1)
+(例1)<br>
 <img src="https://uploda3.ysklog.net/482c0137098d111e20a94c6f469f5030.png" width="300">
-(例2)
+(例2)<br>
 <img src="https://uploda3.ysklog.net/86f6b3573257bd89737f6eaaf2e4c76d.png" width="300">
-(例3)
+(例3)<br>
 <img src="https://uploda3.ysklog.net/d9af6850f38b0391bef5a605dee83aff.png" width="300">
 
