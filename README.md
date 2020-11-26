@@ -91,6 +91,5 @@ class ResidualBlock(Layer):
     outputs = _residual + _shortcut
     return outputs
 ```
-    
-    <図3 : Residual Block実装コード>
+<図3 : Residual Block実装コード>
 
