@@ -91,5 +91,6 @@ Resnetとは、畳み込み層へ入力させるものと何もしないもの�
         outputs = _residual + _shortcut
         return outputs
     ```
+    
     <図3 : Residual Block実装コード>
 
