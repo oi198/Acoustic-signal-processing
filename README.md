@@ -20,5 +20,5 @@
 |サンプル3|<img src="https://uploda3.ysklog.net/d9af6850f38b0391bef5a605dee83aff.png" width="300">|<img src="https://uploda2.ysklog.net/ffdee3669860d8cc085c30add1aedd57.png" width="300">|
 
 上記のような8種類のスペクトログラムをそれぞれ(20×50)の配列データに変換し、さらにそれらを(1000×1)の配列データに変形させます。<br>
-[訓練用データ](https://drive.google.com/file/d/1zlQFh_jN4yOs188_GQ0hY4pLB5UlSAxv/view?usp=sharing)には、8種類の配列データがそれぞれ90個ずつ、合計720個のデータが保存されています。<br>
-[検証用データ](https://drive.google.com/file/d/1qlaZw2J2fjxv5pVTxT4Y_CRjFF7vSukO/view?usp=sharing)には、8種類の配列データがそれぞれ10個ずつ、合計80個のデータが保存されています。<br>
+[訓練用データ](https://drive.google.com/file/d/1zlQFh_jN4yOs188_GQ0hY4pLB5UlSAxv/view?usp=sharing)には、8種類の音データのラベル(1～8)と、各種類の配列データが90個ずつ、合計720個のデータが保存されています。(720×1001)<br>
+[検証用データ](https://drive.google.com/file/d/1qlaZw2J2fjxv5pVTxT4Y_CRjFF7vSukO/view?usp=sharing)には、8種類の音データのラベル(1～8)と、各種類の配列データがそれぞれ10個ずつ、合計80個のデータが保存されています。(80×1001)<br>
