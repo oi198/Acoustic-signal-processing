@@ -23,20 +23,20 @@ Resnetとは、畳み込み層へ入力させるものと何もしないもの�
 (例)
 ||波形|スペクトログラム|
 |:---:|:---:|:---:|
-|サンプル1|<img src="https://uploda3.ysklog.net/482c0137098d111e20a94c6f469f5030.png" width="300">|<img src="https://uploda2.ysklog.net/d4521ff2d22eee6d1ef55babfa7901fe.png" width="300">|
-|サンプル2|<img src="https://uploda3.ysklog.net/86f6b3573257bd89737f6eaaf2e4c76d.png" width="300">|<img src="https://uploda2.ysklog.net/53d5a8100f3b331b30b312b268ed77a8.png" width="300">|
-|サンプル3|<img src="https://uploda3.ysklog.net/d9af6850f38b0391bef5a605dee83aff.png" width="300">|<img src="https://uploda2.ysklog.net/ffdee3669860d8cc085c30add1aedd57.png" width="300">|
+|サンプル1|<img src="https://user-images.githubusercontent.com/67414951/102814826-9d0c6c00-440e-11eb-8070-87eda04abfa5.PNG" width="300">|<img src="https://user-images.githubusercontent.com/67414951/102814812-95e55e00-440e-11eb-9dec-913c355941ad.PNG" width="300">|
+|サンプル2|<img src="https://user-images.githubusercontent.com/67414951/102814829-9e3d9900-440e-11eb-8799-9b9b0f744d7e.PNG" width="300">|<img src="https://user-images.githubusercontent.com/67414951/102814815-97168b00-440e-11eb-9063-0c0893b1f94f.PNG" width="300">|
+|サンプル3|<img src="https://user-images.githubusercontent.com/67414951/102814833-9f6ec600-440e-11eb-8bba-44e072990748.PNG" width="300">|<img src="https://user-images.githubusercontent.com/67414951/102814817-9847b800-440e-11eb-9724-97664d867413.PNG" width="300">|
 
 <表1 : 音データの波形とスペクトログラムを3つ紹介><br>
 
 上記のような8種類のスペクトログラムをそれぞれ(20×50)の配列データに変換し、さらにそれらを(1000×1)の配列データに変形させます。<br>
 
 [訓練用データ](https://drive.google.com/file/d/1zlQFh_jN4yOs188_GQ0hY4pLB5UlSAxv/view?usp=sharing)には、先頭列に音の種類のラベル(1～8)とそれ以降の列に配列データ(1000×1)が、各音の種類に対して90個ずつ、合計720個のデータが保存されています。(720×1001)<br>
-<img src="https://uploda1.ysklog.net/a75e5af2acaf358a3a07560f91d276f7.png" width="800"><br>
+<img src="https://user-images.githubusercontent.com/67414951/102814796-8d8d2300-440e-11eb-9edf-3af916b073b8.PNG" width="800"><br>
 <図1 : 訓練用データのデータフレーム><br>
 
 [検証用データ](https://drive.google.com/file/d/1qlaZw2J2fjxv5pVTxT4Y_CRjFF7vSukO/view?usp=sharing)には、先頭列に音の種類のラベル(1～8)とそれ以降の列に配列データ(1000×1)が、各音の種類に対して10個ずつ、合計80個のデータが保存されています。(80×1001)<br>
-<img src="https://uploda1.ysklog.net/1e9d2ab4fe3c459d9aab7aedebbd4db5.png" width="800"><br>
+<img src="https://user-images.githubusercontent.com/67414951/102814798-8ebe5000-440e-11eb-9c88-a8fefcccc9c2.PNG" width="800"><br>
 <図2 : 検証用データのデータフレーム><br>
 <br>
 
@@ -145,7 +145,7 @@ CNNでは画像を上下左右に反転させるなどして、より正確に�
 
 ### 結果
 
-<img src="https://uploda1.ysklog.net/8417fee12016a3c15ffe5ae24d144b60.png" width="800">
+<img src="https://user-images.githubusercontent.com/67414951/102814824-9bdb3f00-440e-11eb-80fd-72e30f90a1cf.PNG" width="800">
 <図6 : 訓練用データと検証用データの学習の推移><br>
 
 図6より、過学習なく100%の精度で音声信号の分類に成功していることが分かります。<br>
