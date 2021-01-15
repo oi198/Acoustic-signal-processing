@@ -1,4 +1,4 @@
-### Residual Networkを使って音響信号処理モデルを作りました！
+# Residual Networkを使って音響信号処理モデルを作りました！
 
 コード：[google colabで開く](https://colab.research.google.com/drive/1hEXoFEK_z_HRq-quTmOZVT62IMXy70Go?usp=sharing)<br>
 ※google colabで開く場合は以下のファイルをgoogleドライブ上「drive/My Drive/Colab Notebooks/traindata.csv」「drive/My Drive/Colab Notebooks/testdata.csv」にアップロードしてください。
